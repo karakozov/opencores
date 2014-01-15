@@ -1,7 +1,9 @@
 
-KERNELVER := $(shell uname -r)
-EXTRA_CFLAGS += -O2 
-EXTRA_CFLAGS += -I $(PWD)/../../common/board
+PWD := $($(shell) pwd)
+
+KERNELVER ?= $(shell uname -r)
+EXTRA_CFLAGS += -O2
+EXTRA_CFLAGS += -I$(PWD)/../../common/board
 
 ifneq ($(KERNELRELEASE),)
 
